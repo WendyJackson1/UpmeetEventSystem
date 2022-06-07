@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Event } from '@angular/router';
+import { Favorite } from './favorite';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,16 @@ export class EventService {
    deleteEvent(id: number) {
      return this.http.delete(this.rootURL + "event/DeleteEvent/" + id)
    }
+
+   showFavorites(): Observable <Favorite[]> {
+    return this.http.get<Favorite[]>(this.rootURL + "favorite/ShowAllFavorites")
+  }
+
+  createFavorite(f: Favorite): void {
+    this.http.put(this.rootURL + "favorite/CreateNewFavorite" ,f)
+  }
+
+  removeFavorite(id: number): void{
+    this.http.delete(this.rootURL + "favorite/RemoveFavorite/" + id)
+  }
 }
