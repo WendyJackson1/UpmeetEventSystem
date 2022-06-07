@@ -17,6 +17,8 @@ namespace UpmeetEventSystem.Models
         }
 
         public virtual DbSet<Event> Events { get; set; } = null!;
+        public virtual DbSet<Favorite> Favorites { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,6 +40,30 @@ namespace UpmeetEventSystem.Models
                 entity.Property(e => e.EventLocation).HasMaxLength(40);
 
                 entity.Property(e => e.EventName).HasMaxLength(40);
+            });
+
+            modelBuilder.Entity<Favorite>(entity =>
+            {
+                entity.Property(e => e.EventId).HasColumnName("EventID");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.Event)
+                    .WithMany(p => p.Favorites)
+                    .HasForeignKey(d => d.EventId)
+                    .HasConstraintName("FK__Favorites__Event__4CA06362");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Favorites)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__Favorites__UserI__4BAC3F29");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.Property(e => e.UserName).HasMaxLength(30);
             });
 
             OnModelCreatingPartial(modelBuilder);
