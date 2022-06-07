@@ -63,7 +63,7 @@ namespace UpmeetEventSystem.Controllers
         }
 
         [HttpPut("FavoriteEvent/{id}")]
-        public string CompleteEvent(int id)
+        public string FavoriteEvent(int id)
         {
             Event e = db.Events.Find(id);
 
