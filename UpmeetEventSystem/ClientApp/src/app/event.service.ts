@@ -14,18 +14,31 @@ export class EventService {
    }
 
    getAllEvents(): Observable<Event[]> {
-     return this.http.get<Event[]>(this.rootURL + "event/GetEvents/")
+     return this.http.get<Event[]>(this.rootURL + "event/GetEvents/");
    }
 
-   favoriteEvent(id: number) {
-     return this.http.put(this.rootURL + "event/FavoriteEvent/" + id, {})
+   getEventsByName(name: string) {
+     return this.http.get<Event[]>(this.rootURL + "event/SearchByName/" + name);
    }
-   
+
+   getEventsById(id: number) {
+     return this.http.get<Event>(this.rootURL + "event/SearchById/" + id);
+   }
+
    createEvent(newEvent: Event) {
-     return this.http.post(this.rootURL + "event/CreateEvent/", newEvent)
-   }
- 
-   deleteEvent(id: number) {
-     return this.http.delete(this.rootURL + "event/DeleteEvent/" + id)
-   }
+     return this.http.post(this.rootURL + "event/CreateEvent/", newEvent);
+    }
+    
+    deleteEvent(id: number) {
+      return this.http.delete(this.rootURL + "event/DeleteEvent/" + id);
+    }
+    
+    updateEvent(id: number) {
+      return this.http.put(this.rootURL + "event/UpdateEvent/" + id, {});
+    }
+    
+    favoriteEvent(id: number) {
+      return this.http.put(this.rootURL + "event/FavoriteEvent/" + id, {});
+    }
+
 }
