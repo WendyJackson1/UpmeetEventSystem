@@ -1,7 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Event } from '@angular/router';
+import { Event } from './Event';
+import { User } from './User';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +18,7 @@ export class EventService {
    getAllEvents(): Observable<Event[]> {
      return this.http.get<Event[]>(this.rootURL + "event/GetEvents/");
    }
-
-   getEventsByName(name: string) {
-     return this.http.get<Event[]>(this.rootURL + "event/SearchByName/" + name);
-   }
-
-   getEventsById(id: number) {
-     return this.http.get<Event>(this.rootURL + "event/SearchById/" + id);
-   }
-
+   
    createEvent(newEvent: Event) {
      return this.http.post(this.rootURL + "event/CreateEvent/", newEvent);
     }
@@ -32,13 +26,39 @@ export class EventService {
     deleteEvent(id: number) {
       return this.http.delete(this.rootURL + "event/DeleteEvent/" + id);
     }
-    
-    updateEvent(id: number) {
-      return this.http.put(this.rootURL + "event/UpdateEvent/" + id, {});
-    }
-    
+
     favoriteEvent(id: number) {
       return this.http.put(this.rootURL + "event/FavoriteEvent/" + id, {});
     }
 
+    //===========================================================================
+
+    showUsers(): Observable<User[]> {
+      return this.http.get<User[]>(this.rootURL + "user/ShowUsers/");
+    }
+
+    addUser(u: User) {
+      return this.http.put(this.rootURL + "user/AddUser/", u);
+    }
+
+    removeUser(id: number) {
+      return this.http.delete(this.rootURL + "user/RemoveUser/" + id);
+    }
+
+    //===========================================================================
+
+    
+
+
+  //  getEventsByName(name: string) {
+  //    return this.http.get<Event[]>(this.rootURL + "event/SearchByName/" + name);
+  //  }
+
+  //  getEventsById(id: number) {
+  //    return this.http.get<Event>(this.rootURL + "event/SearchById/" + id);
+  //  }
+
+    // updateEvent(id: number) {
+    //   return this.http.put(this.rootURL + "event/UpdateEvent/" + id, {});
+    // }
 }
