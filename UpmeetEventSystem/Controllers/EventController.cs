@@ -30,7 +30,7 @@ namespace UpmeetEventSystem.Controllers
         }
 
         [HttpPost("CreateEvent")]
-        public string CreateEvent(Event e)
+        public string CreateEvent([FromBody]Event e)
         {
             db.Events.Add(e);
             db.SaveChanges();
