@@ -1,1 +1,23 @@
-<p>user works!</p>
+<h2>Registration</h2>
+<p>Username:</p>
+<input type="text" [(ngModel)]="newUser.userName" />
+
+
+<button (click)="registerUser()">Add</button>
+
+
+<!-- <input type="text" id="name" name="name" class="form-control"
+      appForbiddenName="bob"
+      [(ngModel)]="newUser.userName" #name="ngModel">
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert">
+
+  <div *ngIf="name.errors?.['required']">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors?.['forbiddenName']">
+    Name cannot be Bob.
+  </div>
+
+</div> -->

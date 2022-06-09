@@ -9,7 +9,7 @@ namespace UpmeetEventSystem.Controllers
     public class EventController : ControllerBase
     {
         EventDBContext db = new EventDBContext();
-        
+
         [HttpGet("GetEvents")]
         public List<Event> GetEvents()
         {
@@ -30,11 +30,50 @@ namespace UpmeetEventSystem.Controllers
         }
 
         [HttpPost("CreateEvent")]
-        public string CreateEvent([FromBody]Event e)
+        public string CreateEvent(Event e)
         {
-            db.Events.Add(e);
-            db.SaveChanges();
-            return e.EventName + " has been successfully added to the database";
+            using EventDBContext db = new EventDBContext();
+            {
+
+                var name = db.Events.Where(x => x.EventName == e.EventName).FirstOrDefault();
+                if (name == null)
+                {
+                    //string date = e.EventDate.ToString("yyyy-MM-dd");
+                    //date.Split(-);
+                    //Console.WriteLine(e.EventDate);
+
+                    if (e.EventDate != null)
+                    {
+                        //bool status = false;
+                        //int m = DateTime.Month(e.EventDate);
+                        //var dateTime = e.EventDate;
+                        //if (DateTime.TryParseExact(dateTime), out status)
+                        //{
+                        //}
+                        //else
+                        //{
+                        //    return $"That didn't work, please check your format and try again.";
+                        //}
+                            db.Events.Add(e);
+                            db.SaveChanges();
+                            return $"{e.EventName} was added to the database";
+                        
+                    }
+                    else
+                    {
+                        return $"That didn't work, please check your format and try again.";
+                    }
+                }
+                else
+                {
+                    return $"That didn't work, please check your format and try again.";
+                }
+
+            }
+
+            //db.Events.Add(e);
+            //db.SaveChanges();
+            //return e.EventName + " has been successfully added to the database";
         }
 
         [HttpDelete("DeleteEvent/{id}")]

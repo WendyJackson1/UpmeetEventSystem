@@ -21,6 +21,7 @@ export class EventService {
   }
 
   createEvent(newEvent: Event) {
+    //if(newEvent !=== null)
     return this.http.post(this.rootURL + "event/CreateEvent/", newEvent);
   }
 //===WORK ON USER VALIDATION FOR DATETIME VARIABLE===

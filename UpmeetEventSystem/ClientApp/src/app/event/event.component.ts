@@ -33,6 +33,7 @@ export class EventComponent implements OnInit {
   createEvent() {
     let clone: Event = new Event(0, "", null, "", false)
     Object.assign(clone, this.newEvent);
+    
     console.log(clone);
 
     this.events.push(clone);

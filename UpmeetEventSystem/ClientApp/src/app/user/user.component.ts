@@ -9,7 +9,7 @@ import { User } from '../User';
 })
 export class UserComponent implements OnInit {
 
-  results: User[] = [];
+  users: User[] = [];
   newUser: User = new User(0, "");
   constructor(private eventDB: EventService) { }
 
@@ -19,16 +19,18 @@ export class UserComponent implements OnInit {
   showUsers(): void {
     this.eventDB.showUsers().subscribe(
       (response) => {
-        this.results = response;
+        this.users = response;
       }
     )
   }
 
-  createUser(): void {
+  registerUser(): void {
     this.eventDB.addUser(this.newUser).subscribe(
       (response) => {console.log(response)}
     );
   }
+
+
 
   deleteUser(id: number): void {
     this.eventDB.removeUser(id).subscribe(
