@@ -1,1 +1,35 @@
-<p>event works!</p>
+<h1>Welcome to Events!</h1>
+
+
+<div *ngIf="events.length ===0">
+    <p>{{showEvents()}}</p>
+</div>
+<!-- <div *ngFor="let result of results">
+    <p>{{result.eventName}}</p>
+</div> -->
+
+
+<!-- <button (click)="showEvents()">Search</button> -->
+
+<ul>
+    <li *ngFor="let e of events">
+      <p [ngStyle]="{'text-decoration': e.isFavorite? 'line-through' : 'none'}">{{e.eventName}}
+        <button (click)="favoriteEvent(e.eventId)" *ngIf="e.isFavorite === false">Favorite</button>
+      </p>
+    </li>
+  </ul>
+  
+  <h2>Add New Event</h2>
+  <p>Event Name:</p>
+  <input type="text" [(ngModel)]="newEvent.eventName" />
+
+  <p>Event Date: (YYYY-MM-DD)</p>
+  <input  type="datetime" [(ngModel)]="newEvent.eventDate" />
+
+  <p>Event Location:</p>
+  <input type="string" [(ngModel)]="newEvent.eventLocation" />
+  
+  <button (click)="createEvent()">Add</button>
+  
+
+
