@@ -5,29 +5,11 @@
     <p>{{showEvents()}}</p>
 </div>
 
-<ul>
-    <li *ngFor="let e of events">
-      <p [ngStyle]="{'text-decoration': e.isFavorite? 'underline' : 'none'}">{{e.eventName}}
-      </p>
-    </li>
-  </ul>
+<div *ngFor="let e of events; let i = index">
+    <div>
+        <p *ngIf="i < 5">{{e.eventName}}</p>
 
-<div style="padding: 3em 3em;">
-    <!-- hideToggle -->
-    <mat-expansion-panel >  
-        <mat-expansion-panel-header>
-            <mat-panel-title>Title Goes HERE</mat-panel-title>
-            <mat-panel-description>Expansion info goes HERE</mat-panel-description>
-        </mat-expansion-panel-header>
-
-        <div>
-            <img src="https://blubbyweb.files.wordpress.com/2019/02/naruto-thumbs-up.jpg">
-        </div>
-
-        <mat-action-row>
-            <button>Subscribe</button>
-        </mat-action-row>
-
-    </mat-expansion-panel>
-
+    </div>
 </div>
+
+

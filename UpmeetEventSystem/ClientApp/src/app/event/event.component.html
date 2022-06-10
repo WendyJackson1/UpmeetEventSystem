@@ -1,7 +1,7 @@
 <h1>Welcome to Events!</h1>
 
 
-<div *ngIf="events.length ===0">
+ <div *ngIf="events.length ===0">
     <p>{{showEvents()}}</p>
 </div>
 <!-- <div *ngFor="let result of results">
@@ -10,14 +10,42 @@
 
 
 <!-- <button (click)="showEvents()">Search</button> -->
-
+<!-- 
 <ul>
-    <li *ngFor="let e of events">
-      <p [ngStyle]="{'text-decoration': e.isFavorite? 'underline' : 'none'}">{{e.eventName}}
-        <button (click)="favoriteEvent(e.eventId)" *ngIf="e.isFavorite === false">Favorite</button>
-      </p>
-    </li>
-  </ul>
+  <li *ngFor="let e of events">
+    <p [ngStyle]="{'text-decoration': e.isFavorite? 'underline' : 'none'}">{{e.eventName}}
+     <button (click)="favoriteEvent(e.eventId)" *ngIf="e.isFavorite === false">Favorite</button>
+    </p>
+  </li>
+</ul> -->
+
+<div style="padding: 3em -2em;">
+  <mat-accordion [multi]="true">
+
+    <!-- hideToggle [disabled]="false"-->
+    <mat-expansion-panel *ngFor="let e of events">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{e.eventName}}</mat-panel-title>
+        <mat-panel-description></mat-panel-description>
+      </mat-expansion-panel-header>
+      
+      <br/>
+      <br/>
+      
+      <div>
+        <p>{{e.eventLocation}}</p>
+        <p>{{e.eventDate}}</p>
+      </div>
+
+      <mat-action-row>
+        <button>Favorite</button>
+      </mat-action-row>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</div>
   
   
   <h2>Add New Event</h2>
