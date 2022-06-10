@@ -34,15 +34,15 @@ namespace UpmeetEventSystem.Controllers
         {
             using EventDBContext db = new EventDBContext();
             {
+                //string newDate: 
+                // var name = db.Events.Where(x => x.EventName == e.EventName).FirstOrDefault();
+                //if (DateTime.TryParse(e.EventDate,out DateTime newEventDate, ))
+                //{
+                //    //string date = e.EventDate.ToString("yyyy-MM-dd");
+                //    //date.Split(-);
+                //    //Console.WriteLine(e.EventDate);
 
-                var name = db.Events.Where(x => x.EventName == e.EventName).FirstOrDefault();
-                if (name == null)
-                {
-                    //string date = e.EventDate.ToString("yyyy-MM-dd");
-                    //date.Split(-);
-                    //Console.WriteLine(e.EventDate);
-
-                    if (e.EventDate != null)
+               if (e.EventDate != null)
                     {
                         //bool status = false;
                         //int m = DateTime.Month(e.EventDate);
@@ -54,15 +54,10 @@ namespace UpmeetEventSystem.Controllers
                         //{
                         //    return $"That didn't work, please check your format and try again.";
                         //}
-                            db.Events.Add(e);
-                            db.SaveChanges();
-                            return $"{e.EventName} was added to the database";
+                 db.Events.Add(e);
+                 db.SaveChanges();
+                 return $"{e.EventName} was added to the database";
                         
-                    }
-                    else
-                    {
-                        return $"That didn't work, please check your format and try again.";
-                    }
                 }
                 else
                 {

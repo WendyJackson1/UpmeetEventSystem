@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
 import { User } from '../User';
+import { Event } from '../Event';
+
+
 
 @Component({
   selector: 'app-user',
@@ -37,6 +40,7 @@ export class UserComponent implements OnInit {
       (response) => {console.log(response)}
     );
   }
+
 
 
 }

@@ -1,9 +1,35 @@
+<!-- 
+                      Think of this as home html              -->
+
+
 <h2>Registration</h2>
 <p>Username:</p>
 <input type="text" [(ngModel)]="newUser.userName" />
 
 
-<button (click)="registerUser()">Add</button>
+<button (click)="registerUser()">Add</button> 
+<p>.
+</p>
+<p>.
+</p>
+<p>.
+</p>
+<p>.
+</p>
+<p>.
+</p>
+
+
+<p> This spot can be used for the Login info and Button </p>
+<!-- <div *ngIf="events.length ===0">
+  <p>{{showEvents()}}</p>
+</div>
+<div> --> 
+  <!-- <a [routerLink]="['/showEvents']">Events</a>
+  <li *ngFor="let e of events">
+    <p [ngStyle]="{'text-decoration': e.isFavorite? 'line-through' : 'none'}">{{e.eventName}}
+      <button (click)="favoriteEvent(e.eventId)" *ngIf="e.isFavorite === false">Favorite</button>
+</div> -->
 
 
 <!-- <input type="text" id="name" name="name" class="form-control"
@@ -14,7 +40,7 @@
     class="alert">
 
   <div *ngIf="name.errors?.['required']">
-    Name is required.
+    Name is required.7
   </div>
   <div *ngIf="name.errors?.['forbiddenName']">
     Name cannot be Bob.

@@ -35,8 +35,6 @@ namespace UpmeetEventSystem.Controllers
             }
 
 
-
-
             //List<User> output = db.Users.ToList();
             //if (db.Users.Contains(u))
             //for (int i = 0; i < output.Count(); i++)
@@ -67,13 +65,13 @@ namespace UpmeetEventSystem.Controllers
             //}
         }
 
-        [HttpDelete("RemoveUser/{id}")]
-        public string RemoveUser(int id)
-        {
-            User u = db.Users.Find(id);
-            db.Users.Remove(u);
-            db.SaveChanges();
-            return $"{u.UserName} was removed from your favorites list.";
-        }
+        //[HttpDelete("RemoveUser/{id}")]
+        //public string RemoveUser(int id)
+        //{
+        //    User u = db.Users.Find(id);
+        //    db.Users.Remove(u);
+        //    db.SaveChanges();
+        //    return $"{u.UserName} was removed from your favorites list.";
+        //}
     }
 }

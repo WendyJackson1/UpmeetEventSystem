@@ -36,7 +36,9 @@ import { FavoriteComponent } from './favorite/favorite.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'event', component: EventComponent},
       { path: 'user', component: UserComponent},
-      { path: 'favorite', component: FavoriteComponent}
+      { path: 'favorite', component: FavoriteComponent},
+      { path: 'showEvents', component: EventComponent},
+      { path: 'registerUser', component: EventComponent}
     ])
   ],
   providers: [],
