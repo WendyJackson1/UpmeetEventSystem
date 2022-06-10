@@ -101,11 +101,24 @@ namespace UpmeetEventSystem.Controllers
         {
             Event e = db.Events.Find(id);
 
-            e.IsFavorite = true;
-            db.Events.Update(e);
-            db.SaveChanges();
+            if (e.IsFavorite == true)
+            {
+                e.IsFavorite = false;
+                db.Events.Update(e);
+                db.SaveChanges();
+            }
+            else if (e.IsFavorite == false)
+            {
+                e.IsFavorite = true;
+                db.Events.Update(e);
+                db.SaveChanges();
+            }
 
-            return $"{e.EventName} has been favorited";
+            //e.IsFavorite = true;
+            //db.Events.Update(e);
+            //db.SaveChanges();
+
+            return $"{e.EventName} has had it's favorite property changed to {e.IsFavorite}";
         }
     }
 }

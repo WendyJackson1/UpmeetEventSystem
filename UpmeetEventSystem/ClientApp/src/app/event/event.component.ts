@@ -24,6 +24,11 @@ export class EventComponent implements OnInit {
     )
   }
 
+
+  // removeTime(date = new Date()) {
+  //   return new Date(date.toDateString());
+  // }
+
   // createEvent(): void {
   //   this.eventDB.createEvent(this.newEvent).subscribe(
   //     (response) => {console.log(response)}
