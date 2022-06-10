@@ -14,6 +14,15 @@ import { EventComponent } from './event/event.component';
 import { UserComponent } from './user/user.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+
+import { MatExpansionModule} from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -24,12 +33,27 @@ import { FavoriteComponent } from './favorite/favorite.component';
     FetchDataComponent,
     EventComponent,
     UserComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    // BrowserAnimationsModule,
+    // MatBadgeModule,
+    // MatIconModule,
+    // MatButtonModule,
+    // MatMenuModule,
+    // MatProgressBarModule,
+    // MatExpansionModule
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatBadgeModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatExpansionModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
