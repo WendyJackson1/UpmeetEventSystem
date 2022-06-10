@@ -1,9 +1,11 @@
-<h1>Welcome to Events!</h1>
+<h1>Welcome to SAW Events!</h1>
 
 
 <div *ngIf="events.length ===0">
     <p>{{showEvents()}}</p>
 </div>
+
+<br/>
 <!-- <div *ngFor="let result of results">
     <p>{{result.eventName}}</p>
 </div> -->
@@ -11,26 +13,59 @@
 
 <!-- <button (click)="showEvents()">Search</button> -->
 
-<ul>
+<!-- <ul>
     <li *ngFor="let e of events">
       <p [ngStyle]="{'text-decoration': e.isFavorite? 'underline' : 'none'}">{{e.eventName}}
         <button (click)="favoriteEvent(e.eventId)" *ngIf="e.isFavorite === false">Favorite</button>
       </p>
     </li>
-  </ul>
+  </ul> -->
   
-  
-  <h2>Add New Event</h2>
-  <p>Event Name:</p>
-  <input type="text" [(ngModel)]="newEvent.eventName" />
 
-  <p>Event Date:</p>
-  <input  type="date" [(ngModel)]="newEvent.eventDate" />
+  <div style="padding: 3em -2em;">
+    <mat-accordion [multi]="true">
+  
+      <!-- hideToggle [disabled]="false"-->
+      <mat-expansion-panel *ngFor="let e of events">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{e.eventName}}</mat-panel-title>
+          <mat-panel-description>View Event Info</mat-panel-description>
+        </mat-expansion-panel-header>
+        
+        <br/>
+        <br/>
 
-  <p>Event Location:</p>
-  <input type="string" [(ngModel)]="newEvent.eventLocation" />
+        <div>
+          <p>{{e.eventLocation}}</p>
+          <p>{{e.eventDate}}</p>
+        </div>
   
-  <button (click)="createEvent()">Add</button>
+        <mat-action-row>
+          <button>Favorite</button>
+        </mat-action-row>
   
+      </mat-expansion-panel>
+  
+    </mat-accordion>
+  
+  </div>
+
+  <br/>
+
+  <div>
+
+    <h2>Add New Event</h2>
+    <p>Event Name:</p>
+    <input type="text" [(ngModel)]="newEvent.eventName" />
+    
+    <p>Event Date:</p>
+    <input  type="date" [(ngModel)]="newEvent.eventDate" />
+    
+    <p>Event Location:</p>
+    <input type="string" [(ngModel)]="newEvent.eventLocation" />
+    
+    <button (click)="createEvent()">Add</button>
+    
+  </div>
 
 
