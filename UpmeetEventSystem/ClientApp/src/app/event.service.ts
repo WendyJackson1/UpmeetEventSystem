@@ -52,9 +52,9 @@ export class EventService {
     return this.http.get<Favorite[]>(this.rootURL + "favorite/ShowFavorites/");
   }
 
-  addFavorite(f: Favorite) {
-    return this.http.put(this.rootURL + "favorite/AddFavorite/", f);
-  }
+  // addFavorite(f: Favorite) {
+  //   return this.http.put(this.rootURL + "favorite/AddFavorite/", f);
+  // }
 
   removeFavorite(id: number) {
     return this.http.delete(this.rootURL + "favorite/RemoveFavorite/" + id)

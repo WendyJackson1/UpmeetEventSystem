@@ -3,6 +3,7 @@ import { EventService } from '../event.service';
 import { Event } from '../Event';
 
 
+
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -58,6 +59,16 @@ export class EventComponent implements OnInit {
       (response) => {console.log(response)}
     )
   }
+  deleteFavorite(id: number): void {
+    this.eventDB.removeFavorite(id).subscribe(
+      (response) => {console.log(response)}
+    );
+  }
+  // createFavorite(): void {
+  //   this.eventDB.addFavorite(this.newFavorite).subscribe(
+  //     (response) => {console.log(response)}
+  //   );
+  // }
 
   // completeTask(id: number) {
 

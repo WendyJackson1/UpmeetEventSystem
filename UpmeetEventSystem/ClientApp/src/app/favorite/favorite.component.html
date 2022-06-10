@@ -1,1 +1,19 @@
 <p>favorite works!</p>
+
+
+<div *ngIf="events.length ===0">
+    <p>{{showFavorites}}</p>
+</div>
+
+<br/>
+ <div *ngFor="let result of results">
+    <p>{{showFavorites}}</p>
+</div>
+
+
+<ul>
+  <li *ngFor="let e of events">
+    <p [ngStyle]="{'text-decoration': e.isFavorite? 'underline' : 'none'}">{{e.eventName}}
+    </p>
+  </li>
+</ul> 
