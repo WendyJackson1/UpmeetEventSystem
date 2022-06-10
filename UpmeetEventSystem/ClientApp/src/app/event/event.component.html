@@ -13,18 +13,19 @@
 
 <ul>
     <li *ngFor="let e of events">
-      <p [ngStyle]="{'text-decoration': e.isFavorite? 'line-through' : 'none'}">{{e.eventName}}
+      <p [ngStyle]="{'text-decoration': e.isFavorite? 'underline' : 'none'}">{{e.eventName}}
         <button (click)="favoriteEvent(e.eventId)" *ngIf="e.isFavorite === false">Favorite</button>
       </p>
     </li>
   </ul>
   
+  
   <h2>Add New Event</h2>
   <p>Event Name:</p>
   <input type="text" [(ngModel)]="newEvent.eventName" />
 
-  <p>Event Date: (YYYY-MM-DD)</p>
-  <input  type="datetime" [(ngModel)]="newEvent.eventDate" />
+  <p>Event Date:</p>
+  <input  type="date" [(ngModel)]="newEvent.eventDate" />
 
   <p>Event Location:</p>
   <input type="string" [(ngModel)]="newEvent.eventLocation" />
