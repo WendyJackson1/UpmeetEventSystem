@@ -4,6 +4,8 @@
  <div *ngIf="events.length ===0">
     <p>{{showEvents()}}</p>
 </div>
+
+<br/>
 <!-- <div *ngFor="let result of results">
     <p>{{result.eventName}}</p>
 </div> -->
@@ -34,11 +36,13 @@
       
       <div>
         <p>{{e.eventLocation}}</p>
-        <p>{{e.eventDate}}</p>
+        <p>{{e.eventDate |date:'longDate'
+        }}</p>
       </div>
+      <button (click)="favoriteEvent(e.eventId)">Favorite</button>
 
       <mat-action-row>
-        <button>Favorite</button>
+
       </mat-action-row>
 
     </mat-expansion-panel>
