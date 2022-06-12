@@ -2,19 +2,20 @@
 
 <p>Welcome, please click <a class routerLink="./user">HERE</a> to Login !</p>
 <html>
-<h2 class="header">~Upcoming Events~</h2>
-<div class="Elist" *ngIf="events.length ===0">
+<h2>~Upcoming~</h2>
+<div *ngIf="events.length ===0">
     <p>{{showEvents()}}</p>
 </div>
-
 <br/>
 
-<div class="Elist2" *ngFor="let e of events; let i = index">
+
+
+<div *ngFor="let e of events; let i = index">
     <div>
         <p *ngIf="i < 5">{{e.eventName}}</p>
-
     </div>
 </div>
+
 
 </html>
 <!-- <ul>
