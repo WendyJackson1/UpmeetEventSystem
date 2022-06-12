@@ -1,9 +1,10 @@
 <h1>Welcome to SAW Events!</h1>
 
-
+<body>
 <div *ngIf="events.length ===0">
   <p>{{showEvents()}}</p>
 </div>
+
 
 <br />
 <!-- <div *ngFor="let result of results">
@@ -35,15 +36,18 @@
       <br />
       <br />
 
-      <div>
+      <div class="mat">
         <p>{{e.eventLocation}}</p>
 
         <!-- <p>{{removeTime(e.eventDate)}}</p> -->
 
         <p>{{e.eventDate | date: 'longDate'}}</p>
       </div>
-
-      <button (click)="favoriteEvent(e.eventId)">Favorite</button>
+      <div >
+        <i></i>
+        <button (click)="favoriteEvent(e.eventId)" class ="button1">Favorite</button>
+      </div >
+      
       <mat-action-row>
         <!-- <button>FalseFavorite</button> -->
       </mat-action-row>
@@ -56,7 +60,7 @@
 
 <br />
 
-<div>
+<div class="Add">
 
   <h2>Add New Event</h2>
   <p>Event Name:</p>
@@ -68,6 +72,10 @@
   <p>Event Location:</p>
   <input type="string" [(ngModel)]="newEvent.eventLocation" />
 
-  <button (click)="createEvent()">Add</button>
+  <button (click)="createEvent()" class="button2">Add</button>
 
+</div>
+</body>
+<div class="pic">
+  <img src="https://www.confettisupermarket.com/product_images/uploaded_images/messe-luzern-corporate-event.jpg">
 </div>

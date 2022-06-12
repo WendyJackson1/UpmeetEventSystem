@@ -1,0 +1,34 @@
+.button1{
+    background-color:cornflowerblue;
+  }
+  
+ .button1:hover{background-color:red;}
+ .button1:focus{background-color:green;}
+ 
+
+ .mat{
+background-color: cornflowerblue;
+
+
+}
+body{
+    font-weight: bolder;
+    text-align: center;
+    border: black;
+    border-style: groove;
+}
+.Add{
+
+    border-style: dotted;
+    border-bottom: black;
+    border-left: black;
+    border-right: black;
+}
+.pic{
+   text-align: center;
+}
+.button2:hover{background-color: red;}
+.button2:focus{background-color: green;}
+
+
+
