@@ -3,9 +3,6 @@
 
 
 
-<h2>Please Login</h2>
-<p>Username:</p>
-=======
 <h2>Registration</h2>
 <p>Who are you?</p>
 
@@ -13,9 +10,7 @@
 
 
 <button (click)="registerUser()">Add</button> 
-
-
-=======
+<br/>
 <!-- The Above is our basic login to connect to DB -->
 
 <br/>
@@ -33,11 +28,12 @@
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <!-- <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required> -->
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
 
     <button type="submit" (click)="registerUser()">Login</button>
     <!-- Need a login method           ^^^ -->
+    
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>

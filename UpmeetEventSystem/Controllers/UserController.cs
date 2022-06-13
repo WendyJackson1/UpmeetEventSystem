@@ -65,13 +65,13 @@ namespace UpmeetEventSystem.Controllers
             //}
         }
 
-        //[HttpDelete("RemoveUser/{id}")]
-        //public string RemoveUser(int id)
-        //{
-        //    User u = db.Users.Find(id);
-        //    db.Users.Remove(u);
-        //    db.SaveChanges();
-        //    return $"{u.UserName} was removed from your favorites list.";
-        //}
+        [HttpDelete("RemoveUser/{id}")]
+        public string RemoveUser(int id)
+        {
+            User u = db.Users.Find(id);
+            db.Users.Remove(u);
+            db.SaveChanges();
+            return $"{u.UserName} was removed from your user list.";
+        }
     }
 }
