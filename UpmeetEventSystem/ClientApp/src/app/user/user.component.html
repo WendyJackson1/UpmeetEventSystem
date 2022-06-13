@@ -1,13 +1,21 @@
 <!-- 
                       Think of this as home html              -->
 
+
+
+<h2>Please Login</h2>
+<p>Username:</p>
+=======
 <h2>Registration</h2>
 <p>Who are you?</p>
+
 <input type="text" [(ngModel)]="newUser.userName" />
 
 
 <button (click)="registerUser()">Add</button> 
 
+
+=======
 <!-- The Above is our basic login to connect to DB -->
 
 <br/>
@@ -40,6 +48,7 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+
 
 <!-- <div *ngIf="events.length ===0">
   <p>{{showEvents()}}</p>

@@ -1,9 +1,13 @@
+
+  <div class="Welcome">
 <h1>Welcome to SAW Events!</h1>
-
-
+  </div>
+  <html>
+<body>
 <div *ngIf="events.length ===0">
   <p>{{showEvents()}}</p>
 </div>
+
 
 <br />
 <!-- <div *ngFor="let result of results">
@@ -35,18 +39,15 @@
       <br />
       <br />
 
-      <div>
+      <div class="mat">
         <p>{{e.eventLocation}}</p>
 
         <!-- <p>{{removeTime(e.eventDate)}}</p> -->
 
         <p>{{e.eventDate | date: 'longDate'}}</p>
       </div>
+        <button (click)="favoriteEvent(e.eventId)" class ="button1">Favorite</button>
 
-      <button (click)="favoriteEvent(e.eventId)">Favorite</button>
-      <mat-action-row>
-        <!-- <button>FalseFavorite</button> -->
-      </mat-action-row>
 
     </mat-expansion-panel>
 
@@ -56,18 +57,27 @@
 
 <br />
 
-<div>
+<div class="Add">
 
-  <h2>Add New Event</h2>
-  <p>Event Name:</p>
+  <h3>Have an Event to Add?</h3>
+  <h4>Add It Here </h4>
+
+  
   <input type="text" [(ngModel)]="newEvent.eventName" />
+  <p>Your Event Name</p>
 
-  <p>Event Date:</p>
+
   <input type="date" [(ngModel)]="newEvent.eventDate" />
+  <p>When Is It?</p>
 
-  <p>Event Location:</p>
+
   <input type="string" [(ngModel)]="newEvent.eventLocation" />
+  <p>Where Is It?</p>
 
-  <button (click)="createEvent()">Add</button>
+  <button (click)="createEvent()" class="button2">Add</button>
+  <br/>
+  <p>Thanks for Using SAW Events!</p>
 
 </div>
+</body>
+</html>
