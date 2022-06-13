@@ -50,13 +50,15 @@ text-decoration-color: white;
 .mat-expansion-panel-header-title {
     color: black;
     background-color: whitesmoke;
+    font-size: larger;
+    font-weight: bolder;
   }
 
   .mat-expansion-panel {
     background-color:whitesmoke;
     color: black;
     display: inline-table;
-    
+    font-size: small;
   }
   .Welcome{
     text-decoration-color: whitesmoke;
