@@ -1,4 +1,5 @@
-<p>favorite works!</p>
+<html>
+<h3 class="header">Here are the Event's You've Favorited!</h3>
 
 <!-- <div *ngIf="favorites.length ===0">
     <p>{{showEvents()}}</p>
@@ -15,3 +16,7 @@
         <p [ngStyle]="{'text-decoration': e.isFavorite? 'underline' : 'none'}">{{e.eventName}}
           <button (click)="favoriteEvent(e.eventId)" *ngIf="e.isFavorite === false">Favorite</button>
         </p> -->
+
+        <h3 class="link">Want to Add More?</h3>
+        <p class="link">Head back to the <a class routerLink="/showEvents">Event Page</a></p>
+        </html>

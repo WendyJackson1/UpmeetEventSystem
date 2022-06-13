@@ -32,6 +32,8 @@ export class EventService {
     return this.http.put(this.rootURL + "event/FavoriteEvent/" + id, {});
   }
 
+  
+
   //===========================================================================
 
   showUsers(): Observable<User[]> {
