@@ -1,26 +1,46 @@
 <!-- 
                       Think of this as home html              -->
 
-
 <h2>Registration</h2>
-<p>Username:</p>
+<p>Who are you?</p>
 <input type="text" [(ngModel)]="newUser.userName" />
 
 
 <button (click)="registerUser()">Add</button> 
-<p>.
-</p>
-<p>.
-</p>
-<p>.
-</p>
-<p>.
-</p>
-<p>.
-</p>
+
+<!-- The Above is our basic login to connect to DB -->
+
+<br/>
+<br/>
+<br/>
 
 
-<p> This spot can be used for the Login info and Button </p>
+<h2>Log In Here:</h2>
+<form action="action_page.php" method="post">
+  <!-- <div class="imgcontainer">
+    <img src=" " alt="Avatar" class="avatar">
+  </div> -->
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <!-- <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required> -->
+
+    <button type="submit" (click)="registerUser()">Login</button>
+    <!-- Need a login method           ^^^ -->
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
 <!-- <div *ngIf="events.length ===0">
   <p>{{showEvents()}}</p>
 </div>
