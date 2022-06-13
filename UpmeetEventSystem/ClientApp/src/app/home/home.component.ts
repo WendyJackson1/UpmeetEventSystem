@@ -12,7 +12,7 @@ import { Favorite } from '../event/Favorite';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  providers: [EventService, EventComponent, UserComponent, FavoriteComponent],
+  providers: [ EventComponent, UserComponent, FavoriteComponent],
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {

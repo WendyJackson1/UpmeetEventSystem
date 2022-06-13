@@ -16,6 +16,20 @@ namespace UpmeetEventSystem.Controllers
             return db.Users.ToList();
         }
 
+        [HttpGet("GetUserById/{id}")]
+        public User GetUserById(int id)
+        {
+            User u = db.Users.Find(id);
+            return u;
+        }
+        [HttpGet("GetUserByName/{uname}")]
+        public User GetUserByName(string uname)
+        {
+            User u = db.Users.Where(x => x.UserName == uname).FirstOrDefault();
+            return u;
+        }
+
+
         [HttpPut("AddUser")]
         public string AddUser(User u)
         {

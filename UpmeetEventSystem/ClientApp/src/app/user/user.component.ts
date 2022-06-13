@@ -16,7 +16,9 @@ export class UserComponent implements OnInit {
   newUser: User = new User(0, "");
   constructor(private eventDB: EventService) { }
 
-  ngOnInit(): void {
+
+  ngOnInit(): void { 
+    // this.eventDB.loggedUser = new User (4,"Adam")
   }
 
   showUsers(): void {
@@ -26,6 +28,20 @@ export class UserComponent implements OnInit {
       }
     )
   }
+
+
+
+  getUserByName(name:string) {
+  this.eventDB.getUserByName(name).subscribe(
+    (response) =>{
+      this.eventDB.setCurrentUser (response);
+    }
+  )
+  }
+
+  
+
+
 
   registerUser(): void {
     this.eventDB.addUser(this.newUser).subscribe(

@@ -10,11 +10,28 @@ import { Favorite } from './event/Favorite';
   providedIn: 'root'
 })
 export class EventService {
-
+  loggedUser: User = new User(0,"");
+  
   rootURL: string;
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.rootURL = baseUrl;
   }
+
+  getCurrentUser(){
+    return this.loggedUser;
+  }
+  setCurrentUser(user : User){
+  this.loggedUser = user;
+  }
+
+  getUserByName(uname: string): Observable<User> {
+    return this.http.get<User>(this.rootURL + "user/GetUserByName/" + uname)
+  }
+
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(this.rootURL + "user/GetUserById/" + id);
+  }
+
 
   getAllEvents(): Observable<Event[]> {
     return this.http.get<Event[]>(this.rootURL + "event/GetEvents/");
@@ -54,8 +71,8 @@ export class EventService {
     return this.http.get<Favorite[]>(this.rootURL + "favorite/ShowFavorites/");
   }
 
-  addFavorite(f: Favorite) {
-    return this.http.put(this.rootURL + "favorite/AddFavorite/", f);
+  addFavorite( eventid: number, userid: number ) {
+    return this.http.post(this.rootURL + "favorite/AddFavorite/"+ eventid + "/" + userid,{});
   }
 
   removeFavorite(id: number) {

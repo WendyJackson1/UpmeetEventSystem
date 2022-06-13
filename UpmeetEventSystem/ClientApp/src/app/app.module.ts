@@ -22,10 +22,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 
 import { MatExpansionModule} from '@angular/material/expansion';
+import { EventService } from './event.service';
 
 
 @NgModule({
   declarations: [
+
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -65,7 +67,7 @@ import { MatExpansionModule} from '@angular/material/expansion';
       { path: 'registerUser', component: EventComponent}
     ])
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

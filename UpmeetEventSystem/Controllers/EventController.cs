@@ -16,6 +16,7 @@ namespace UpmeetEventSystem.Controllers
             return db.Events.ToList();
         }
 
+
         [HttpGet("SearchByName/{name}")]
         public List<Event> SearchByName(string name)
         {

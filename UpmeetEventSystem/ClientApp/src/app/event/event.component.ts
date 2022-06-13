@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
 import { Event } from '../Event';
+import { User } from '../User';
 
 
 
@@ -10,12 +11,14 @@ import { Event } from '../Event';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
+  loggedInUser : User = new User (0,"");
 
   events: Event[] = [];
   newEvent: Event = new Event(0, "", null, "", false);
-  constructor(private eventDB: EventService) {  }
+  constructor(private eventDB: EventService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {this.showEvents();
+    this.loggedInUser = this.eventDB.loggedUser
   }
 
   showEvents(): void {
@@ -56,8 +59,8 @@ export class EventComponent implements OnInit {
     );
   }
 
-  favoriteEvent(id: number): void {
-    this.eventDB.favoriteEvent(id).subscribe(
+  addFavorite(id: number): void {console.log(this.eventDB.loggedUser)
+    this.eventDB.addFavorite(id,this.eventDB.getCurrentUser().userId).subscribe(
       (response) => {console.log(response)}
     )
   }

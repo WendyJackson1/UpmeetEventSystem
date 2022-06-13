@@ -16,21 +16,34 @@ namespace UpmeetEventSystem.Controllers
             return db.Favorites.ToList();
         }
 
-        [HttpGet("GetFavoritesByDate")]
-        public List<Favorite> GetFavsByDate()
-        {
-            List<Favorite> orderedFavs = db.Favorites.OrderBy(x => x.Event.EventDate).ToList();
-            return orderedFavs;
-        }
 
-        [HttpPut("AddFavorite")]
-        public string AddFavorite(int id)
+        [HttpPost("AddFavorite/{eventid}/{userid}")]
+
+        public void AddFavorite(int eventid, int userid)
         {
-            Favorite f = db.Favorites.Find(id);
+            Favorite f = new Favorite();
+            f.EventId = eventid;
+            f.UserId = userid;
             db.Favorites.Add(f);
             db.SaveChanges();
-            return $"{f.Event.EventName} was added to the database";
+
         }
+
+        //[HttpGet("GetFavoritesByDate")]
+        //public List<Favorite> GetFavsByDate()
+        //{
+        //    List<Favorite> orderedFavs = db.Favorites.OrderBy(x => x.Event.EventDate).ToList();
+        //    return orderedFavs;
+        //}
+
+        //[HttpPut("AddFavorite")]
+        //public string AddFavorite(int id)
+        //{
+        //    Favorite f = db.Favorites.Find(id);
+        //    db.Favorites.Add(f);
+        //    db.SaveChanges();
+        //    return $"{f.Event.EventName} was added to the database";
+        //}
 
         [HttpDelete("RemoveFavorite/{id}")]
         public string RemoveFavorite(int id)
