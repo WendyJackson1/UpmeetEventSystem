@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Event } from '../Event';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-nav-menu',
