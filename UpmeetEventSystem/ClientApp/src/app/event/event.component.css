@@ -1,0 +1,66 @@
+.button1{
+    background-color:white;
+    border-radius:10px;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  }
+  
+ .button1:hover{background-color:yellow;}
+ .button1:focus{background-color:cornflowerblue; }
+
+
+
+ .mat{
+background-color: transparent;
+text-decoration: white;
+
+}
+body{
+    background-color: transparent;
+    text-decoration: white;
+    font-weight: bolder;
+    text-align: center;
+    border: black;
+    border-style: groove;
+
+}
+.Add{
+display: inline-block;
+border: black;
+border-style: groove;
+    background-color: whitesmoke;
+padding: 5px;
+    padding-bottom: 5px;
+    
+}
+
+
+
+.button2:hover{background-color: yellow;}
+.button2:focus{background-color: cornflowerblue;}
+
+
+html { 
+    background: url(https://www.confettisupermarket.com/product_images/uploaded_images/messe-luzern-corporate-event.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+text-decoration-color: white;
+}
+.mat-expansion-panel-header-title {
+    color: black;
+    background-color: whitesmoke;
+  }
+
+  .mat-expansion-panel {
+    background-color:whitesmoke;
+    color: black;
+    display: inline-table;
+    
+  }
+  .Welcome{
+    text-decoration-color: whitesmoke;
+    text-align: center;
+  }
+
+  

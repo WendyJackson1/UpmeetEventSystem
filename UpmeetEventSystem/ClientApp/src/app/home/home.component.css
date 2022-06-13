@@ -1,0 +1,10 @@
+html { 
+    background: url(https://www.borderspetrescue.org/wp-content/uploads/2017/01/events-1.png) no-repeat center; 
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size:contain;
+font-weight: bolder;
+font-size: larger;
+
+text-align: center;}
